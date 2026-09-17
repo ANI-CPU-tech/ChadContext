@@ -24,7 +24,7 @@ export class DataStack extends Stack {
       indexName: 'GSI1',
       partitionKey: { name: 'SK', type: AttributeType.STRING },
       sortKey: { name: 'PK', type: AttributeType.STRING },
-      projection: { type: ProjectionType.ALL },
+      projectionType: ProjectionType.ALL,
     });
 
     new CfnOutput(this, 'TableName', { value: this.table.tableName });
