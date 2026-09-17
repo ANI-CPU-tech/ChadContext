@@ -10,7 +10,7 @@ Source of truth: `docs/01-spec.md` (what), `docs/02-tech-stack.md` (how), `docs/
 ## Day 1 — Foundation & Ingestion (P1)
 ### Morning — skeleton + webhook
 - [x] `infra/lib/data-stack.ts`: DynamoDB `ChadContextGraph`, on-demand, GSI1 (SK/PK flipped) — synth verified
-- [ ] `infra/lib/ingestion-stack.ts`: S3 bucket `raw/github/ raw/discord/ raw/transcripts/` + EventBridge notifications on, HTTP API `POST /webhook/github`
+- [x] `infra/lib/ingestion-stack.ts`: S3 bucket `raw/github/ raw/discord/ raw/transcripts/` + EventBridge notifications on, HTTP API `POST /webhook/github` — synth verified (EventBridgeConfiguration, route, least-privilege IAM)
 - [ ] `lambdas/github-webhook/`: verify HMAC via Secrets Manager → `PutObject` thin pointer `{source,type,raw_content,timestamp,ids}`
 - [ ] `cdk synth` clean, Jest + `aws-sdk-client-mock` on canned PR payload
 ### Midday sync (HARD) — hand-write, not AI-delegated
