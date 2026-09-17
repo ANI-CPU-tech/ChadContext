@@ -1,0 +1,7 @@
+{
+  "Comment": "TODO Day 2: prefer CDK chainables over raw ASL (docs/02-tech-stack.md §6). Placeholder only.",
+  "StartAt": "TODO",
+  "States": {
+    "TODO": { "Type": "Pass", "End": true }
+  }
+}
