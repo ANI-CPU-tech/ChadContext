@@ -1,2 +1,7 @@
+packages:
+  - 'infra'
+  - 'shared'
+  - 'frontend'
+
 allowBuilds:
   esbuild: false
