@@ -4,4 +4,4 @@ packages:
   - 'frontend'
 
 allowBuilds:
-  esbuild: false
+  esbuild: true

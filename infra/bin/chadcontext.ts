@@ -1,3 +1,11 @@
-// TODO Day 1: instantiate CDK App + DataStack / IngestionStack / PipelineStack.
-// pnpm add aws-cdk-lib constructs aws-cdk -D -w (or in infra/), then flesh out.
-export {};
+import { App } from 'aws-cdk-lib';
+import { DataStack } from '../lib/data-stack.js';
+import { IngestionStack } from '../lib/ingestion-stack.js';
+
+const app = new App();
+
+const data = new DataStack(app, 'ChadContextData');
+// Day 1: data + ingestion. Pipeline stack lands in the Day 2 task.
+new IngestionStack(app, 'ChadContextIngestion', { tableName: data.table.tableName });
+
+app.synth();
