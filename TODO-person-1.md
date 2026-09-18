@@ -21,7 +21,7 @@ Source of truth: `docs/01-spec.md` (what), `docs/02-tech-stack.md` (how), `docs/
 
 ## Day 2 — Intelligence layer (P1)
 - [ ] `infra/lib/pipeline-stack.ts`: S3 → EventBridge → Step Functions chain (`extractFn` Nova Micro → `correlateFn` KB Retrieve → `scoreFn` Nova Pro + write)
-- [ ] `lambdas/extract-entities/`, `correlate-semantic/`, `score-and-store/`: small independently testable handlers (Converse API, not InvokeModel)
+- [x] `lambdas/extract-entities/`, `correlate-semantic/`, `score-and-store/`: small independently testable handlers (Converse API, not InvokeModel) — 12 unit tests pass, `pnpm verify` green
 - [ ] Prove ONE real PR → DynamoDB `NODE#pr-xxx` + edges (Day 2 PM sync → Person 2 tests MCP query against it)
 
 ## Day 3 — Dashboard + write-back (P1)
