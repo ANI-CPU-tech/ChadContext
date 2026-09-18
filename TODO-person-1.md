@@ -12,12 +12,12 @@ Source of truth: `docs/01-spec.md` (what), `docs/02-tech-stack.md` (how), `docs/
 - [x] `infra/lib/data-stack.ts`: DynamoDB `ChadContextGraph`, on-demand, GSI1 (SK/PK flipped) — synth verified
 - [x] `infra/lib/ingestion-stack.ts`: S3 bucket `raw/github/ raw/discord/ raw/transcripts/` + EventBridge notifications on, HTTP API `POST /webhook/github` — synth verified (EventBridgeConfiguration, route, least-privilege IAM)
 - [x] `lambdas/github-webhook/`: verify HMAC via Secrets Manager → `PutObject` thin pointer `{source,type,raw_content,timestamp,ids}` — 4 unit tests pass
-- [ ] `cdk synth` clean, Jest + `aws-sdk-client-mock` on canned PR payload
+- [x] `cdk synth` clean, unit tests + `aws-sdk-client-mock` on canned PR payload — bundled as `pnpm verify` (tests → typecheck → synth)
 ### Midday sync (HARD) — hand-write, not AI-delegated
-- [ ] `docs/schema.md`: PK/SK, GSI1, node/edge types, S3 contract, query patterns — share with Person 2
+- [x] `docs/schema.md`: PK/SK, GSI1, node/edge types, S3 contract, query patterns — shared with Person 2, confirmed, frozen
 ### Afternoon
-- [ ] Deploy skeleton, prove `POST /webhook/github` → S3 object lands
-- [ ] EOD: webhook→S3 working, schema frozen, demo repo choice locked
+- [x] Deploy skeleton, prove `POST /webhook/github` → S3 object lands — verified live (push + PR #6 from logizel/SquidWardDevs-OL11, both match contract)
+- [x] EOD: webhook→S3 working, schema frozen, demo repo choice locked (logizel/SquidWardDevs-OL11)
 
 ## Day 2 — Intelligence layer (P1)
 - [ ] `infra/lib/pipeline-stack.ts`: S3 → EventBridge → Step Functions chain (`extractFn` Nova Micro → `correlateFn` KB Retrieve → `scoreFn` Nova Pro + write)

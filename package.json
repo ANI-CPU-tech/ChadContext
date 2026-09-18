@@ -6,7 +6,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test:unit": "tsx --test \"lambdas/**/*.test.ts\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "verify": "pnpm test:unit && pnpm typecheck && pnpm --filter @chadcontext/infra synth",    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
