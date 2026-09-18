@@ -43,6 +43,7 @@ describe('extract-entities', () => {
     const entities = out.entities as { ticketIds: string[] };
     assert.ok(entities.ticketIds.includes('217'));
     assert.equal(out.bucketName, 'b');
+    assert.deepEqual(out.ids, { repo: 'acme/shop', pr: '482', issue: '217' });
   });
 
   it('parses fenced model output', async () => {

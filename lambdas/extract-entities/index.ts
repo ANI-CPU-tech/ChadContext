@@ -93,5 +93,6 @@ export const handler = async (event: unknown): Promise<Record<string, unknown>> 
   const issueId = pointer.ids?.issue;
   if (issueId && !entities.ticketIds.includes(issueId)) entities.ticketIds.push(issueId);
 
-  return { ...input, bucketName, key, entities };
+  // Pass the pointer ids downstream: score-and-store derives the node id from them.
+  return { ...input, bucketName, key, ids: pointer.ids, entities };
 };
