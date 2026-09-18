@@ -6,7 +6,8 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test:unit": "tsx --test \"lambdas/**/*.test.ts\"",
-    "verify": "pnpm test:unit && pnpm typecheck && pnpm --filter @chadcontext/infra synth",    "test": "echo \"Error: no test specified\" && exit 1"
+    "verify": "pnpm test:unit && pnpm typecheck && pnpm --filter @chadcontext/infra synth",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -20,8 +21,10 @@
   },
   "type": "module",
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1134.0",
     "@aws-sdk/client-s3": "^3.1133.0",
     "@aws-sdk/client-secrets-manager": "^3.1133.0",
+    "@aws-sdk/lib-dynamodb": "^3.1134.0",
     "@aws-sdk/s3-request-presigner": "^3.1133.0",
     "discord.js": "^14.27.0",
     "dotenv": "^17.4.2"
