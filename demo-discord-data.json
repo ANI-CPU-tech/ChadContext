@@ -1,0 +1,42 @@
+[
+  {
+    "source": "discord",
+    "type": "message",
+    "raw_content": "dev_dave: Hey team, seeing payment timeouts in prod again (ticket #217). Gateway takes ~2-3s under load and our retry bails immediately. Anyone else seeing this?",
+    "timestamp": "2026-09-12T09:42:11.000Z",
+    "ids": {
+      "messageId": "discord-9930",
+      "author": "dev_dave",
+      "authorId": "dave-01",
+      "channelId": "demo-channel",
+      "ticket": "217"
+    }
+  },
+  {
+    "source": "discord",
+    "type": "message",
+    "raw_content": "senior_sarah: Looked at the logs — we tried a 1s delay before and it was not enough, p99 gateway latency is 2.4s. Let's fix ticket #217 by adding a 3-second delay before retry, that should cover it. I will approve a PR for that.",
+    "timestamp": "2026-09-12T10:05:33.000Z",
+    "ids": {
+      "messageId": "discord-9931",
+      "author": "senior_sarah",
+      "authorId": "sarah-02",
+      "channelId": "demo-channel",
+      "ticket": "217"
+    }
+  },
+  {
+    "source": "discord",
+    "type": "message",
+    "raw_content": "dev_dave: Makes sense, opening PR #482 with time.sleep(3) before retry to fix ticket #217. Links Fixes #217. Will merge once CI passes.",
+    "timestamp": "2026-09-12T10:31:02.000Z",
+    "ids": {
+      "messageId": "discord-9932",
+      "author": "dev_dave",
+      "authorId": "dave-01",
+      "channelId": "demo-channel",
+      "ticket": "217",
+      "pr": "482"
+    }
+  }
+]
