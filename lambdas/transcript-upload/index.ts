@@ -92,7 +92,7 @@ export const handler = async (event: TranscriptUploadEvent): Promise<ApiResponse
       new PutObjectCommand({ Bucket: bucket, Key: key, ContentType: contentType }),
       { expiresIn: 300 },
     );
-    return json(200, { url, key, bucket, expiresIn: 300 });
+    return json(200, { uploadUrl: url, objectKey: key, bucket, expiresIn: 300 });
   } catch (err) {
     console.error(err);
     return json(500, { error: 'failed to generate upload URL' });
